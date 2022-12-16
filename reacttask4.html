@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<script>
+	<!---spread operator-->
+	let nonveg=["chicken", "fish","brawn"];
+	let veg=["sambar","rasam","card"];
+	let menucard=[...nonveg,...veg];
+	console.log(menucard);
+	
+	<!--rest operator-->
+	function sum(...rest){
+		console.log(rest)
+	}
+	let result=sum(10,20,30,40);
+	
+	function add(...rest1){
+		return rest1.reduce(function(a,b){
+			return a+b;
+		});
+	}
+	let result1=add(1,2,3,4);
+	console.log(result1);
+	
+	<!--arrow function-->
+	let students=[
+	{
+	name:"priya",
+	id:1,
+	degree:"bsc"
+	},
+	{
+	name:"meena",
+	id:2,
+	degree:"MBBS"
+	},
+	{
+	name:"muthu",
+	id:3,
+	degree:"BE"
+	}
+	]
+	let identify=students.find((details)=>details.id==2)
+	console.log(identify);
+	<!---call apply-->
+	let name={
+		firstname:"shanmuga piriya",
+		lastname:"muthuraman",
+		printfullname:function(hometown,state){
+			console.log(this .firstname+" "+this .lastname+"from"+hometown+","+state);
+		}
+	}
+	name.printfullname(name,"kadayam","TN");
+	let name1={
+		firstname:"meena",
+		lastname:"muthuraman",
+	}
+	name.printfullname.call(name1,"Tenkasi","TN");
+	name.printfullname.apply(name1,["Tenkasi","TN"]);
+	</script>
+</body>
+</html>

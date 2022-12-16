@@ -62,6 +62,17 @@
 	}
 	name.printfullname.call(name1,"Tenkasi","TN");
 	name.printfullname.apply(name1,["Tenkasi","TN"]);
+	<!---bind-->
+	let obj1={
+		name:"priya",
+	}
+	let obj2={
+		fun1:function(a){
+			console.log(this .name+" "+a);
+		}
+	};
+	let result2=obj2.fun1.bind(obj1,"hello")
+	result2();
 	</script>
 </body>
 </html>
